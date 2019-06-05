@@ -26,8 +26,8 @@
   </script>
 
 
-<button name="action" type="button" value="save" id="submit" class="btn btn-line-parrot">Save</button>
-
 <form action="" id="createform" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
 <input type="file" name="file" value="" class="col-md-5 form-control" id="file">
+  
+<button name="action" type="button" value="save" id="submit" class="btn btn-line-parrot">Save</button>
