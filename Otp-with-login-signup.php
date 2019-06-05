@@ -535,3 +535,70 @@ public function checkUserRegistration($mobile)
   }
 
 </script>
+
+
+// SQL file 
+
+///////////////////////////////////////////////////////////////////////
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `tbl_otp_code` (
+  `code_id` int(11) NOT NULL AUTO_INCREMENT,
+  `registered_id` int(11) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `status` varchar(2) NOT NULL DEFAULT '1',
+  `cdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`code_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+
+
+INSERT INTO `tbl_otp_code` (`code_id`, `registered_id`, `code`, `status`, `cdate`) VALUES
+(1, 8, '3084', '1', '2019-05-28 08:15:37'),
+(2, 9, '2509', '0', '2019-05-28 08:21:20');
+
+
+///////////////////////////////////////////////////////////////////////
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `tbl_otp_login` (
+  `code_id_login` int(11) NOT NULL AUTO_INCREMENT,
+  `registered_id` int(11) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `status` varchar(2) NOT NULL DEFAULT '1',
+  `cdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`code_id_login`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+INSERT INTO `tbl_otp_login` (`code_id_login`, `registered_id`, `code`, `status`, `cdate`) VALUES
+(1, 10, '8072', '0', '2019-05-28 08:45:25'),
+(2, 10, '5377', '0', '2019-05-28 08:45:35');
+
+/////////////////////////////////////////////////////////////////////////
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `tbl_registered_user` (
+  `registered_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `mobile_number` varchar(15) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `birth_date` varchar(50) NOT NULL,
+  `gender` varchar(15) NOT NULL,
+  `verified` int(2) NOT NULL DEFAULT '0',
+  `cdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `udate` varchar(50) NOT NULL,
+  PRIMARY KEY (`registered_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+
+INSERT INTO `tbl_registered_user` (`registered_id`, `fname`, `lname`, `mobile_number`, `password`, `email`, `birth_date`, `gender`, `verified`, `cdate`, `udate`) VALUES
+(1, '', '', '1111111111', '', 'demo@gmail.com', '', '', 0, '2019-04-29 11:58:05', '2019-04-29 11:58:05'),
+(6, '', '', '9974725810', '', 'admin@gmail.com', '', '', 0, '2019-05-27 15:10:54', '2019-05-27 15:10:54'),
+(8, '', '', '9974777777', '', 'test@gmail.com', '', '', 0, '2019-05-28 08:15:37', '2019-05-28 08:15:37'),
+(10, '', '', '9974725555', '', 'test3@gmail.com', '', '', 0, '2019-05-28 08:30:46', '2019-05-28 08:30:46'),
+(12, '', '', '9974725888', '', 'test20@gmail.com', '', '', 0, '2019-05-28 09:40:42', '2019-05-28 09:40:42'),
+(13, '', '', '9977445566', '', 'testii@gmail.com', '', '', 0, '2019-05-28 10:36:35', '2019-05-28 10:36:35');
