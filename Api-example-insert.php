@@ -1,3 +1,5 @@
+
+<?php 
 //Controller
 
 public function submit_mobile_recharge()
