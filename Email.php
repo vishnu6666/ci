@@ -21,7 +21,7 @@ class Email extends CI_Controller {
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_port' => 465,
             'smtp_user' => 'bimabazaar2018@gmail.com',
-            'smtp_pass' => '@Bima2018',
+            'smtp_pass' => '@Bima20189',
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
